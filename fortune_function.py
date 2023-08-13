@@ -40,7 +40,7 @@ class Horoscope:
 
     def star_sign(self):
         df = pd.read_csv('star_sign.csv', parse_dates=[
-                         'dates'], date_format='%d/%m')
+                         'date_from', 'date_to'], date_format='%d/%m')
         # Get an array containing each row as a tuple
         print(df.dtypes)
 
