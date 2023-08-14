@@ -42,9 +42,11 @@ class Horoscope:
         df = pd.read_csv('star_sign.csv', parse_dates=[
                          'date_from', 'date_to'], date_format='%d/%m')
         # Get an array containing each row as a tuple
-        print(df.dtypes)
-
-        # print(self.datetime_format)
+        date_to_bool = df['date_to'] > '1900-08-18'
+        date_to_dates = df.loc[date_to_bool == True]
+        date_from_dates = date_to_dates['date_from'] < '1900-08-18'
+        horoscope = date_to_dates.loc[date_from_dates == True]
+        print(horoscope)
 
 
 def random_name(first_name):
