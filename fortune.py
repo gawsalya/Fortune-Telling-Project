@@ -12,7 +12,7 @@ if __name__ == '__main__':
     individual = Horoscope(first_name, birthday)
 
     starry()
-    print(f'Lifepath number is: {individual.lifepath}')
+    print(f'Lifepath number is: {individual.lifepath_number}')
     print(f'Lifepath meaning - {individual.lifepath_meaning()}')
 
     starry()
