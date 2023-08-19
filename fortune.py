@@ -1,9 +1,8 @@
+'''functions required to run fortune code'''
+from fortune_function import Horoscope, print_intro, get_html, parse_fortunes_bs, starry, number_for_sign
 
 
-from fortune_function import Horoscope, random_name, print_intro, fortune, get_html, parse_fortunes_bs
-
-
-def main():
+if __name__ == '__main__':
 
     print_intro()
 
@@ -12,17 +11,19 @@ def main():
 
     individual = Horoscope(first_name, birthday)
 
-    star_sign = random_name(individual.name)
+    starry()
+    print(f'Lifepath number is: {individual.lifepath}')
+    print(f'Lifepath meaning - {individual.lifepath_meaning()}')
 
-    # print(f'Lifepath number is: {individual.lifepath()}')
+    starry()
+    star_sign = individual.star_sign()
+    print(f'Star Sign: {star_sign}')
 
-    print(f'star_sign: {individual.star_sign()}')
+    sign_number = number_for_sign(star_sign)
+    horoscope_url = f"""https://www.horoscope.com/us/horoscopes/
+                        general/horoscope-general-daily-today.aspx?sign={sign_number}"""
+    horoscope_doc = get_html(horoscope_url)
 
-    # horoscope_url = "https://www.horoscope.com/us/horoscopes/general/horoscope-general-daily-today.aspx?sign=2"
-    # horoscope_doc = get_html(horoscope_url)
-
-    # reading = parse_fortunes_bs(horoscope_url, horoscope_doc)
-    # print(reading)
-
-
-main()
+    reading = parse_fortunes_bs(horoscope_doc)
+    print(reading)
+    starry()
