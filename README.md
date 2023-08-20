@@ -50,6 +50,6 @@ In this Repository you will find all scripts required to run the code.
   - This file contains a few tests to make sure the code is running as needed.
 
 **Mentions/Credits:**
-ACSII art uses pre-designed art from **https://www.asciiart.eu/**
-Fairy art by Joan G. Stark
-Starry line art inspired by ejm's design
+ACSII art uses pre-designed art from **https://www.asciiart.eu/** .
+Fairy art by Joan G. Stark.
+Starry line art inspired by ejm's design.
