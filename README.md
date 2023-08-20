@@ -4,11 +4,13 @@ Hello! Welcome to Kausi Fortune Telling!
 
 This project is designed to take a user's name and date of birth to calculate their lifepath number and provide the meaning of this. Additionally calculates the star sign and returns their fortune for the day. I have web-scraped from an existing fortune telling website to give an accurate reading.
 
-I have chosen to do this project due to my interest in horoscopes and astrology. \***\*Key highlights** of the code design is using classes to define Horoscope details and Web-scraping code to pull out the relevant fortune. I enjoyed creating the class and found that it helped organise the relevant details I wanted it to return and kept these functions separate from others. Web-scraping used Beautiful Soup to read the HTML tags which I previously inspected on the website to find the relevant tag I would need.
+I have chosen to do this project due to my interest in horoscopes and astrology. **Key highlights** of the code design is using classes to define Horoscope details and Web-scraping code to pull out the relevant fortune. I enjoyed creating the class and found that it helped organise the relevant details I wanted it to return and kept these functions separate from others. Web-scraping used Beautiful Soup to read the HTML tags which I previously inspected on the website to find the relevant tag I would need.
 
 ## Applications:
 
-Aspects of this code can be used to create different programs. For example utilising **classes** in bigger projects would be very useful in being able to find where an error is and can be useful in creating derivations of the same class, for example if we wanted to use a different method to calculate lifepath we can keep the same methods and just re-write this one.
+Aspects of this code can be used to create different programs.
+
+**Object Oriented Programming - Class** utilisation in bigger projects would be very useful in being able to find where an error is and can be useful in creating derivations of the same class, for example if we wanted to use a different method to calculate lifepath we can keep the same methods and just re-write this one.
 
 **Web-scraping** can be useful in picking out certain information from a website you want -- though please be mindful of the current legal advice!
 
@@ -46,3 +48,8 @@ In this Repository you will find all scripts required to run the code.
   - This file contains all the functions required in the main code.
 - `test_fortune.py`
   - This file contains a few tests to make sure the code is running as needed.
+
+**Mentions/Credits:**
+ACSII art uses pre-designed art from **https://www.asciiart.eu/**
+Fairy art by Joan G. Stark
+Starry line art inspired by ejm's design
