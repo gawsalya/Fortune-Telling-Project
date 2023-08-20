@@ -57,10 +57,13 @@ class Horoscope:
         dataframe = pd.read_csv('star_sign.csv', parse_dates=[
             'date_from', 'date_to'], date_format='%d/%m')
 
-        date_to_bool = dataframe['date_to'] > '1900-08-18'
-        date_to_dates = dataframe.loc[date_to_bool is True]
-        date_from_dates = date_to_dates['date_from'] < '1900-08-18'
-        horoscope = date_to_dates.loc[date_from_dates is True]
+        date_of_birth = datetime.datetime.strptime(
+            self.birthday, '%d/%m/%Y')
+
+        date_to_bool = dataframe['date_to'] > f'1900-{date_of_birth.month}-{date_of_birth.day}'
+        date_to_dates = dataframe.loc[date_to_bool == True]
+        date_from_dates = date_to_dates['date_from'] < f'1900-{date_of_birth.month}-{date_of_birth.day}'
+        horoscope = date_to_dates.loc[date_from_dates == True]
 
         return horoscope['star_sign'].iat[0]
 
@@ -119,3 +122,11 @@ def number_for_sign(sign: str):
     number = (dataframe[dataframe['star_sign'] == sign]
               ['number']).to_string(index=False)
     return number
+
+
+def fortune_today(sign_number: str) -> str:
+    horoscope_url = f"https://www.horoscope.com/us/horoscopes/general/horoscope-general-daily-today.aspx?sign={sign_number}"
+    horoscope_doc = get_html(horoscope_url)
+
+    reading = parse_fortunes_bs(horoscope_doc)
+    return reading

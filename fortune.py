@@ -1,5 +1,5 @@
 '''functions required to run fortune code'''
-from fortune_function import Horoscope, print_intro, get_html, parse_fortunes_bs, starry, number_for_sign
+from fortune_function import Horoscope, print_intro, starry, number_for_sign, fortune_today
 
 
 if __name__ == '__main__':
@@ -19,11 +19,7 @@ if __name__ == '__main__':
     star_sign = individual.star_sign()
     print(f'Star Sign: {star_sign}')
 
-    sign_number = number_for_sign(star_sign)
-    horoscope_url = f"""https://www.horoscope.com/us/horoscopes/
-                        general/horoscope-general-daily-today.aspx?sign={sign_number}"""
-    horoscope_doc = get_html(horoscope_url)
-
-    reading = parse_fortunes_bs(horoscope_doc)
+    sign_number = str(number_for_sign(star_sign))
+    reading = fortune_today(sign_number)
     print(reading)
     starry()
